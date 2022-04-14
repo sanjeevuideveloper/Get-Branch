@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start":"nodemon server.js"
+    "start": "nodemon server.js"
   },
   "nodemonConfig": {
     "ignore": [
@@ -19,6 +19,7 @@
     "axios": "^0.26.1",
     "express": "^4.17.3",
     "joi": "^17.6.0",
+    "morgan": "^1.10.0",
     "winston": "^3.6.0"
   },
   "devDependencies": {
