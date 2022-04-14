@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
+const  logger =require('morgan');
 const validateRequest = require("./middlewares/requestValidationMiddleware.js");
 const branchRouter = require('./routes/branchesRouter.js')
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(validateRequest);
