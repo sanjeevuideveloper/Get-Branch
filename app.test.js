@@ -24,6 +24,7 @@ describe("/get-location-branches", () => {
             const response = await supertest(app).get("/get-location-branches").set('lbg-txn-branch-location', 'kent');
             expect(response.statusCode).toBe(200);
             expect(response.headers["content-type"]).toContain('json');
+
         }, 10000);
         test("header lbg-txn-branch-location not as [a-zA-Z] pattern ,  respond with a 400 status code", async () => {
             const response = await supertest(app).get("/get-location-branches").set('lbg-txn-branch-location', 'kent1');
@@ -37,7 +38,7 @@ describe("/get-location-branches", () => {
         const response = await supertest(app).get("/get-location-branches").set('lbg-txn-branch-location', location);
         expect(response.statusCode).toBe(200);
         expect(response.headers["content-type"]).toContain('json');
-        let filter=[];
+        let filter = [];
         response.body.forEach(item => {
             let localFilter = [];
             localFilter = item.branches.filter(branch => {
@@ -55,9 +56,5 @@ describe("/get-location-branches", () => {
         expect(filter.length).toEqual(0);
         expect(response.headers["content-type"]).toContain('json');
     }, 10000);
-
-
-
-
 
 });

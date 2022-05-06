@@ -7,17 +7,5 @@ describe("testing getBranches.js ", () => {
         const header = "london";
         let response = await getBranches(url, header);
         expect(response.length).toBeGreaterThanOrEqual(0);
-    });
-    // test("getBranches() returns error  when called with missing url", async () => {
-    //     const url = "https://api.lloydsbank.com/open-banking/v2.2/branches";
-    //     const header = "london";
-    //     expect.assertions(1);
-    //     try {
-    //         await getBranches('',header);
-    //     } catch (e) {
-    //         console.log(e.toString());
-    //       expect(e).toBeInstanceOf(Error);
-    //     }
-    // }, 10000);
-   
+    },10000);
 });
